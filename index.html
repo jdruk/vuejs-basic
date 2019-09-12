@@ -6,13 +6,17 @@
     <title> Vuejs Basic </title>
   </head>
   <body>
-
     <div id="app">
       <h5 v-if="status">{{ titulo }}</h5>
       <div v-if="usuario.id == 1">
         Nome: {{usuario.nome}}<br>
         Id: {{usuario.id}}
       </div>
+      <ul>
+        <li v-for='item in linguagens'>
+          {{ item.nome}}
+        </li>
+      </ul>
     </div>
     <script>
       var app = new Vue({
@@ -23,7 +27,11 @@
           usuario: {
             id: 1,
             nome: 'josafams'
-          }
+          },
+          linguagens: [
+            { nome: 'Javascript'},
+            { nome: 'Php'}
+          ]
         }
       });
     </script>
