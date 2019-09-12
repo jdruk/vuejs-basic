@@ -8,13 +8,22 @@
   <body>
 
     <div id="app">
-      <h5>{{ titulo }}</h5>
+      <h5 v-if="status">{{ titulo }}</h5>
+      <div v-if="usuario.id == 1">
+        Nome: {{usuario.nome}}<br>
+        Id: {{usuario.id}}
+      </div>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
-          titulo: 'Josafá Martins'
+          status: false,
+          titulo: 'Josafá Martins',
+          usuario: {
+            id: 1,
+            nome: 'josafams'
+          }
         }
       });
     </script>
