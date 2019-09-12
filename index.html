@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title> Vuejs Basic </title>
+    <meta charset="UTF-8">
   </head>
   <body>
     <div id="app">
@@ -17,11 +18,25 @@
           {{ item.nome}}
         </li>
       </ul>
+
+      <div>
+        <input type="text" name="" id="" v-model='descricao'>
+        {{ descricao}}
+      </div>
+
+      <br>
+      <input type="checkbox" name="teste" value="php" v-model='favoritas_linguagens'>php </input>
+      <input type="checkbox" name="teste" value="java" v-model='favoritas_linguagens'>java </input>
+      <input type="checkbox" name="teste" value="javascript" v-model='favoritas_linguagens'>Javascript </input>
+
+      <hr>
+      {{favoritas_linguagens}}
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
+          descricao: '',
           status: false,
           titulo: 'Josafá Martins',
           usuario: {
@@ -31,7 +46,8 @@
           linguagens: [
             { nome: 'Javascript'},
             { nome: 'Php'}
-          ]
+          ],
+          favoritas_linguagens: []
         }
       });
     </script>
