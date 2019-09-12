@@ -31,12 +31,17 @@
 
       <hr>
       {{favoritas_linguagens}}
+
+      <div>
+        <image v-bind:src='imagem'>  
+      </div>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
           descricao: '',
+          imagem: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png',
           status: false,
           titulo: 'Josafá Martins',
           usuario: {
