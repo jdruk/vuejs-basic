@@ -37,8 +37,26 @@
       <div>
         <image v-bind:src='imagem'>  
       </div>
+      
+      <menu-teste></menu-teste>
+
+      <template id="teste-t">
+        <ul>
+          <li>teste</li>
+        </ul>
+      </template>
+    <menu-template-teste></menu-template-teste>
     </div>
+
     <script>
+      Vue.component("menu-teste", {
+        template: '<ul><li>item</li></ul>'
+      });
+      
+      Vue.component("menu-template-teste", {
+        template: '#teste-t'
+      });
+
       var app = new Vue({
         el: '#app',
         data: {
