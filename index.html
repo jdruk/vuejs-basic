@@ -15,7 +15,9 @@
       </div>
       <ul>
         <li v-for='item in linguagens'>
-          {{ item.nome}}
+          {{ item.nome | toUpper}}
+          <button type="button" @click="enviar()">enviar</button>
+          <button :data-source='item.url' type="button" @click="teste()">enviar</button>
         </li>
       </ul>
 
@@ -49,10 +51,26 @@
             nome: 'josafams'
           },
           linguagens: [
-            { nome: 'Javascript'},
-            { nome: 'Php'}
+            { nome: 'Javascript', url: "bla.com.br"},
+            { nome: 'Php', url: 'php.com.br'}
           ],
           favoritas_linguagens: []
+        },
+        filters: {
+          toUpper(str){
+            return str.toUpperCase();
+          }
+
+        },
+        methods: {
+          enviar(){
+            alert("opa");
+          },
+          teste(){
+            var element = event.target;
+            var id = element.getAttribute('data-source');
+            console.log(element);
+          }
         }
       });
     </script>
